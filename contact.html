@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEN BAEK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="lightdark-button">
+        <button id="mode-toggle"><i class="far fa-sun"></i>/<i class="far fa-moon"></i></button>
+    </div>
+
+    <div id="header"></div>  <!-- View in live server -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById(id).innerHTML = html;
+                    })
+                    .catch(error => console.error(`Error loading ${file}:`, error));
+            }
+    
+            loadComponent("header", "header.html");
+        });
+    </script>
+
+    <h1>CONTACT</h1>
+
+    <p>
+        <i class="fas fa-at fa-lg"></i> <a href="mailto:jenny.baek02@gmail.com">jenny.baek02@gmail.com</a> (this is the best way to reach me!) <br>
+        <i class="fab fa-linkedin fa-lg"></i> <a href="https://www.linkedin.com/in/jenny-baek-b82028247/">LinkedIn</a>
+    </p>
+
+    <p>
+        Social media is kind of scary and overwhelming for me, so I don't have any art accounts on other platforms at the moment.
+    </p>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEN BAEK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="lightdark-button">
+        <button id="mode-toggle"><i class="far fa-sun"></i>/<i class="far fa-moon"></i></button>
+    </div>
+
+    <div id="header"></div>  <!-- View in live server -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById(id).innerHTML = html;
+                    })
+                    .catch(error => console.error(`Error loading ${file}:`, error));
+            }
+    
+            loadComponent("header", "header.html");
+        });
+    </script>
+
+    <h1>ART GALLERY</h1>
+
+    <div class="gallery" id="gallery">
+        <figure>
+            <a href="art_digital.html">
+                <img src="uploads/Screen Shot 2025-04-02 at 1.55.38 AM.png" alt="HTML tutorial"></a>
+                <figcaption>Digital</figcaption>
+        </figure>
+
+        <figure>
+            <a href="art_traditional.html">
+                <img src="uploads/Screen Shot 2025-04-02 at 1.55.49 AM.png" alt="HTML tutorial"></a>
+                <figcaption>Traditional</figcaption>
+        </figure>
+
+        <figure>
+            <a href="art_mit.html">
+                <img src="uploads/Screen Shot 2025-04-02 at 1.55.49 AM.png" alt="HTML tutorial"></a>
+                <figcaption>MIT (2021-present)</figcaption>
+        </figure>
+
+        <figure>
+            <a href="art_masterpieces.html">
+                <img src="uploads/Screen Shot 2025-04-02 at 1.55.49 AM.png" alt="HTML tutorial"></a>
+                <figcaption>Masterpieces</figcaption>
+        </figure>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
