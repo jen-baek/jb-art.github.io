@@ -1,0 +1,267 @@
+:root {
+    --text-color: #fff;
+    --accent-color: #52b7ff;
+    --link-color: rgb(183, 183, 183);
+    --background-color: #121212;
+}
+
+.dark-mode {
+    --text-color: #000000;
+    --accent-color: #52b7ff;
+    --link-color: #525252;
+    --background-color: rgb(255, 255, 255);
+  }
+
+@font-face {
+    font-family: "Helvetica Heavy Extended";
+    src: url(fonts/HelveticaNeue-HeavyExt.otf);
+}
+
+@font-face {
+    font-family: "Helvetica Extended";
+    src: url(fonts/HelveticaNeue-Extended.otf);
+}
+
+#header {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: Helvetica Neue, sans-serif;
+    background-color: var(--background-color);
+    text-align: left;
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+}
+
+.navbar {
+    background-color: var(--background-color);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.nav-links {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    font-family: "Helvetica Extended", sans-serif;
+    color: var(--text-color);
+    padding: 14px 20px;
+    font-size: 30px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+h1 {
+    font-family: "Helvetica Extended", sans-serif;
+    color: var(--text-color);
+    font-size: 50px;
+    margin-bottom: 7px;
+}
+
+#name-title {
+    font-family: "Helvetica Heavy Extended", sans-serif;
+    font-size: 70px;
+    color: var(--text-color);
+    font-style: normal;
+    text-align: center;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 2px;
+}
+
+h3 {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+hr {
+    margin-top: 2px;
+    border: 1px solid transparent;
+    border-color: var(--text-color);
+}
+
+p {
+    color: var(--text-color);
+    margin-top: 5px;
+    margin-bottom: 1px;
+    font-size: 18px;
+}
+
+ul {
+    color: var(--text-color);
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.lightdark-button {
+    text-align: right;
+}
+
+#mode-toggle {
+    text-align: right;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: 2px solid transparent;
+    border-color: var(--text-color);
+  }
+  
+  #mode-toggle:hover {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  .pdf-button {
+    padding-top: 50px;
+    text-align: center;
+}
+  
+details {
+    margin-bottom: 10px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+summary::marker {
+    content: "▶ ";
+    color: var(--text-color);
+}
+
+details[open] summary::marker {
+    content: "▼ ";
+    color: var(--text-color);
+}
+
+summary:hover {
+    color: var(--accent-color);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.gallery figure {
+    margin: 0;
+    text-align: center;
+    position: relative;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 3px solid transparent;
+}
+
+.gallery img:hover {
+    border: 3px solid var(--accent-color);
+}
+
+.gallery figcaption {
+    font-family: "Helvetica Extended", sans-serif;
+    max-width: 300px;
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.gallery img.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    max-width: calc(100vw - 500px); /* Leave 500px space to the right for caption */
+    max-height: 80vh;
+    object-fit: contain;
+    cursor: zoom-out;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.desc-box {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    max-width: 300px;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 9998;
+}
+
+.desc-box.active {
+    opacity: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 9997;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}

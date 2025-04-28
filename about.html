@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEN BAEK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="lightdark-button">
+        <button id="mode-toggle"><i class="far fa-sun"></i>/<i class="far fa-moon"></i></button>
+    </div>
+
+    <div id="header"></div>  <!-- View in live server -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById(id).innerHTML = html;
+                    })
+                    .catch(error => console.error(`Error loading ${file}:`, error));
+            }
+    
+            loadComponent("header", "header.html");
+        });
+    </script>
+
+    <h1>JEN BAEK</h1>
+    <p><span style="font-family: Helvetica Extended; font-size: 30px;">
+        she/her
+    </span></p>
+
+    <p>
+        I was born in Atlanta, Georgia and raised in Montgomery, Alabama. When I was a kid, I used to draw epic scenes with 
+        dinosaurs riding motorcycles and wielding flaming katanas. And...now I'm here!
+        <br><br>
+        Drawing + writing are my main hobbies. I have much more experience in drawing than writing, but both bring me joy and 
+        have also landed me some pretty fun gigs.
+    </p>
+
+    <h1>Q&A</h1>
+    <p>
+        <b>Q: Do you take commissions?</b><br>
+        I currently don't take personal commissions, but I'm open to projects from institutions, companies, and organizations. 
+        Please email me with details if you'd like to collaborate!
+        <br><br>
+
+        <b>Q: What drawing software do you use?</b><br>
+        Procreate on iPad Pro
+        <br><br>
+
+        <b>Q: What other platforms do you use that I can follow?</b><br>
+        To be honest, I get a little intimidated by posting my art on social media. I know, bummer.<br>
+        If I ever work up the courage (or if it becomes a necessity), I may post on Tumblr or Instagram and 
+        link those accounts on this site.
+        <br><br>
+
+        <b>Q: Can I use your art as an NFT?</b><br>
+        <b>Q: Can I train my AI model on your art?</b><br>
+        <b>Q: Can I tell or make an AI model to emulate your art style?</b><br>
+        <b>Q: Can I repost your work?</b><br>
+        No.
+        <br><br>
+    </p>
+
+    <script src="script.js"></script>
+</body>
+</html>

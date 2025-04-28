@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEN BAEK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="lightdark-button">
+        <button id="mode-toggle"><i class="far fa-sun"></i>/<i class="far fa-moon"></i></button>
+    </div>
+
+    <div id="header"></div>  <!-- View in live server -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById(id).innerHTML = html;
+                    })
+                    .catch(error => console.error(`Error loading ${file}:`, error));
+            }
+    
+            loadComponent("header", "header.html");
+        });
+    </script>
+
+    <h1><a href="art.html"; style="text-decoration: none;">ART GALLERY</a></span> / TRADITIONAL</h1>
+
+    <div class="gallery" id="gallery"></div>
+
+    <script src="data.js"></script>
+
+    <script>
+        const gallery = document.getElementById("gallery");
+    
+        // Create overlay
+        const overlay = document.createElement("div");
+        overlay.classList.add("overlay");
+        document.body.appendChild(overlay);
+    
+        // Create description box element
+        const descBox = document.createElement("div");
+        descBox.classList.add("desc-box");
+        document.body.appendChild(descBox);
+    
+        data[1].forEach((item, index) => {
+            const figure = document.createElement("figure");
+
+            const img = document.createElement("img");
+            img.src = item.path;
+            img.classList.add("gallery-image");
+
+            const figcaption = document.createElement("figcaption");
+            figcaption.textContent = item.caption || ""; 
+
+            figure.appendChild(img);
+            figure.appendChild(figcaption);
+            gallery.appendChild(figure);
+
+            // Expand image and show caption + description
+            img.addEventListener("click", (event) => {
+                event.stopPropagation();
+                overlay.classList.add("active");
+                img.classList.add("expanded");
+
+                descBox.innerHTML = `<strong>${item.caption}</strong><br>${item.description}`;
+                descBox.classList.add("active");
+            });
+        });
+    
+        // Close image and caption when clicking outside
+        overlay.addEventListener("click", () => {
+            document.querySelectorAll(".expanded").forEach(image => image.classList.remove("expanded"));
+            overlay.classList.remove("active");
+            descBox.classList.remove("active");
+        });
+    
+    </script>
+    
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

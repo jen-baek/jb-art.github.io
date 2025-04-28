@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenny Baek Main Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="lightdark-button">
+        <button id="mode-toggle"><i class="far fa-sun"></i>/<i class="far fa-moon"></i></button>
+    </div>
+
+    <div id="header"></div>  <!-- View in live server -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById(id).innerHTML = html;
+                    })
+                    .catch(error => console.error(`Error loading ${file}:`, error));
+            }
+    
+            loadComponent("header", "header.html");
+        });
+    </script>
+
+    <p>
+        Hi, I'm Jenny! I also go by Jen. Some people call me Jebby.
+    </p>
+
+    <p>
+        This is my art site.
+    </p>
+
+    <p>
+        Want to see my professional site? Go here!
+    </p>
+
+    <script src="script.js"></script>
+</body>
+</html>
